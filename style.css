@@ -1,0 +1,56 @@
+body {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  background-image:  url("background.jpg");
+  background-size:cover;
+}
+.nav-blue {
+    background-color: #cce6ff;
+}
+.well-about {
+    background-color: #cce6ff;
+    padding-top; 75px;
+    padding-bottom: 75px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.well-about h1 {
+    font-family: Permanent Marker;
+    color: navy;
+}
+#skills-slides {
+     max-width:400px;
+    margin-left: 50px;
+    font-style: italic;
+    font-family: Roboto;
+    color: 6A6A6A;
+}
+.well-portfolio {
+    background-color: #cce6ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.well-portfolio h2 {
+    font-family: Permanent Marker;
+    color: navy;
+}
+.well-contact {
+    background-color: #cce6ff;
+    padding-top: 25px;
+    padding-bottom: 75px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.well-contact h2 {
+    font-family: Permanent Marker;
+    color: navy;
+}
+.thumbnail {
+  background-color: #e0ebeb;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#portrait {
+    width: 300px; 
+    border: solid;
+    border-color: #e0ebeb;
+    border-width: 5px;
+}
+

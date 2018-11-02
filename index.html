@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Gudea" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <style>
+        :root {
+
+
+            --header-font: 'Bangers', cursive;
+            --secondary-font: 'Gudea', sans-serif;
+
+            --background-color: lightblue;
+            --primary-color: navy;
+            --text-color: #333333
+                /*
+            --primary-color: #990000;
+            --background-color: #02a1b3;
+            */
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            width: 100vw;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 100vw;
+            max-width: 1075px;
+        }
+
+        #navbar {
+            margin: 0;
+            position: fixed;
+            height: 50px;
+            z-index: 1;
+            display: flex;
+            width: 100%;
+            background-color: var(--background-color);
+            color: var(--text-color);
+
+        }
+
+        #navbar .fas {
+            padding-right: 10px;
+        }
+
+        .navleft {
+            padding-left: 5px;
+            margin: auto;
+            flex-basis: 50%;
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        .navright {
+            flex-basis: 50%;
+
+        }
+
+        #navbar a {
+            text-decoration: none;
+            display: inline-block;
+            color: var(--text-color);
+            width: 100px;
+            height: 50px;
+        }
+
+        #navbar a:hover {
+            background-color: #777;
+            color: white;
+        }
+
+        #navbar ul {
+            margin: 0;
+            float: right;
+            padding-right: 50px;
+        }
+
+        #navbar li {
+            list-style: none;
+            line-height: 50px;
+            width: 100px;
+            float: left;
+            text-align: center;
+        }
+
+        main {
+            margin: 0;
+            width: 100%;
+            padding: 40px 0 0 0;
+            background-color: var(--background-color);
+        }
+
+        #banner {
+            
+            background-image: url('images/background2.jpeg');
+           /* background-image: url('https://drive.google.com/uc?export=download&id=1bUDMP8-c9rGWegDkuBrGl8IBYQoxGwZ3'); */
+            width: 100vw;
+            height: 450px;
+            background-size: cover;
+            opacity: .7;
+        }
+
+        #banner-header {
+            position: absolute;
+            top: 125px;
+            left: 0px;
+            width: 100%;
+        }
+
+
+        .banner-container {
+            margin: auto;
+            height: 450px;
+            width: 100%;
+            display: grid;
+            grid-template-areas: 'heading heading heading'
+                'left image right';
+            justify-content: center;
+            grid-column-gap: 50px;
+        }
+
+        .banner-heading {
+            grid-area: heading;
+            width: 100%;
+        }
+
+        .banner-image {
+            grid-area: image;
+            width: 250px;
+
+        }
+
+        .about-section {
+            grid-area: about;
+        }
+
+        .frontend-skills,
+        .backend-skills {
+            font-family: var(--secondary-font);
+            padding: 0 15px;
+        }
+
+
+
+        .about-section h2 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+
+        .banner-container ul {
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .banner-container li {
+            list-style: none;
+            font-size: 1.7em;
+            padding-right: 25px;
+        }
+
+        .frontend-skills {
+            grid-area: left;
+        
+        }
+
+        .backend-skills {
+            grid-area: right;
+            
+        }
+
+        .portfolio-image {
+            border-radius: 50%;
+            width: 100%;
+            border: 10px solid var(--background-color);
+        }
+
+
+
+        .banner-container h1 {
+            font-size: 55px;
+            margin: 0;
+            font-family: var(--header-font);
+            font-weight: 900;
+            letter-spacing: 5px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .banner-container p {
+            font-family: var(--secondary-font);
+            font-size: 33px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #welcome-section {
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        #projects-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+  
+
+        #projects h2,
+        #contacts-section h2 {
+            font-size: 40px;
+            letter-spacing: 5px;
+            font-family: var(--header-font);
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .about-section h2 {
+
+            font-size: 40px;
+            letter-spacing: 5px;
+            font-family: var(--header-font);
+            color: var(--primary-color);
+            text-align: left;
+
+        }
+
+        .about-section p {
+            font-size: 20px;
+            font-family: var(--secondary-font);
+            text-align: left;
+        }
+
+        .project-tile {
+            flex-basis: 18%;
+            text-decoration: none;
+            width: 250px;
+            padding: 15px;
+            margin: 15px;
+            background-color: white;
+            border-radius: 15px;
+            color: var(--text-color);
+            box-shadow: 5px 5px 8px var(--text-color);
+
+        }
+
+        .project-tile:hover {
+            transform: scale(1.1);
+        }
+
+        .project-tile-image {
+            border: 1px solid black;
+            margin: 0;
+            width: 100%;
+        }
+
+        .project-tile img {
+            margin: 0;
+            width: 200px;
+            height: 175px;
+        }
+
+        #contacts-section {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 100%;
+            max-width: 400px;
+            justify-content: center;
+        }
+
+        .social-media {
+            text-decoration: none;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5px;
+            font-size: 40px;
+            height: 60px;
+            width: 60px;
+            
+            color: white;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            justify-content: center;
+            line-height: 60px;
+            align-content: center;
+        }
+
+
+        .social-media:hover {
+            background-color: white;
+            color: var(--text-color);
+            transform:
+        }
+
+        .social-media a:hover {
+            color: black;
+        }
+
+        /* For Tablets */
+        @media all and (max-width: 1078px) {
+            #welcome-section {
+                width: 100%;
+                height: auto;
+
+            }
+
+            #banner-header {
+                position: absolute;
+                margin: auto 0;
+                top: 100px;
+                left: 0px;
+                width: 100%;
+                height: 450px;
+            }
+            #banner {
+                height: 375px;
+            }
+
+            .banner-container {
+                margin: auto;
+                height: 375px;
+                width: 100%;
+                grid-template-areas: 'heading heading heading'
+                    'left image right'
+                    'left image right';
+                justify-content: center;
+                grid-column-gap: 10px;
+            }
+            .banner-container img {
+                width: 200px;
+
+            }
+            .about-section h2 {
+
+                text-align: center;
+
+            }
+
+            .project-tile {
+                flex-basis: 30%;
+            }
+
+        }
+
+        /* For Smartphones */
+        @media all and (max-width: 800px) {
+            .container {
+                width: 100%;
+                min-width: 300px;
+            }
+
+            .navleft {
+                margin: auto 0;
+                flex-basis: 100%;
+
+            }
+            .navright {
+                display: none;
+            }
+
+            #banner-header {
+                top: 100px;
+            }
+
+            .banner-container h1 {
+                font-size: 30px;
+
+            }
+            .banner-container p {
+                font-size: 18px;
+            }
+            .banner-container li {
+                font-size: 16px;
+            }
+            .banner-image {
+                width: 150px;
+                margin: 0;
+                padding: 0;
+            }
+            .banner-container img {
+                width: 100%;
+                margin: auto;
+            }
+            #banner {
+                height: 300px;
+            }
+            .banner-container {
+                height: 300px;
+            }
+            .about-section {
+                margin-top: 100px;
+            }
+            .about-section p {
+                padding: 0 10px;
+            }
+            .about-section h2, #projects h2, #contacts-section h2 {
+
+                font-size: 25px;
+
+}
+
+        .social-media {
+            font-size: 15px;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 10px;
+        }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="navleft">
+                <span class="fas fa-home"></span>Krissy Dukes Portfolio
+            </div>
+            <div class="navright">
+                <ul>
+                    <li><a href="#welcome-section">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contacts-section">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome-section">
+            <div id="banner"></div>
+            <header id="banner-header">
+                <div class="container">
+                    <div class="banner-container">
+                        <div class="banner-heading">
+                            <h1>KRISSY DUKES</h1>
+                            <p>Web Developer</p>
+                        </div>
+                        <div class="frontend-skills">
+
+                            <ul>
+                                <li>HTML 5</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Bootstrap</li>
+                            </ul>
+                        </div>
+                        <div class="banner-image"><img src="images/portrait.jpg" class="portfolio-image" alt="Image of Krissy">
+                        <!--<img class="portfolio-image" src="https://drive.google.com/uc?export=download&id=1MQRJuqLCyjjj9aeLBR66u3ZoaY-c6yn7" alt="Image of Krissy">--></div>
+                        <div class="backend-skills">
+
+                            <ul>
+                                <li>ASP.NET</li>
+                                <li>C#</li>
+                                <li>VB.NET</li>
+                                <li>PHP</li>
+                                <li>MSSQL</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+            <section>
+                <div class="container">
+                    <div class="about-section">
+                        <h2>About</h2>
+                        <p>Software engineer with over 10 years experience development in ASP.NET, VB.NET, C#, and MSSQL. </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <header>
+                    <h2>Projects</h2>
+                </header>
+                <div id="projects-container">
+                    <a href="https://codepen.io/krissydotnet/full/JaxLrK/" target="_blank" class="project-tile">
+
+                        <div class="project-tile-image">
+                            <img src="https://drive.google.com/uc?export=download&id=1ek2WI5Bw2Q4MAG90IPN-pbVfBKJhy03B" alt="Project Image">
+                            <!--<img src="images/tribute_page.png">-->
+                        </div>
+                        <h3>Tribute Page</h3>
+                    </a>
+                    <a href="https://codepen.io/krissydotnet/full/zJXaxd/" target="_blank" class="project-tile">
+                        <div class="project-tile-image">
+                                <img src="https://drive.google.com/uc?export=download&id=1c8wC9zGq_RKjyRuvxES10yPI6EE9bek1" alt="Project Image">
+                            <!--<img src="images/survey.png">-->
+                            </div>
+                        <h3>Survey</h3>
+                    </a>
+                    <a href="https://codepen.io/krissydotnet/full/MqMRRM/" target="_blank" class="project-tile">
+                        <div class="project-tile-image">
+                                <img src="https://drive.google.com/uc?export=download&id=1nsA5iAvroVlf5Jjqj1mnuOBPGh9fa28y" alt="Project Image">
+                            <!--<img src="images//product_page.png">--></div>
+                        <h3>Product Page</h3>
+
+                    </a>
+                    <a href="https://codepen.io/krissydotnet/full/JmjqeX/" target="_blank" class="project-tile">
+                        <div class="project-tile-image">
+                                <img src="https://drive.google.com/uc?export=download&id=11huZKXB3iMIiwCwVaAJuKAOLZ6uYQjGq" alt="Project Image">
+                            <!--<img src="images/technical_documentation.png">--></div>
+                        <h3>Technical Documentation</h3>
+
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <section id="contacts-section">
+            <div class="container">
+                <header>
+                    <h2>Contact</h2>
+                </header>
+                <div class="contact-methods">
+
+                    <a href="https://twitter.com/dotnetmomma" class="social-media" target="_blank">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+
+
+                    <a href="http://www.linkedin.com/in/krissy-dukes" class="social-media" target="_blank">
+                        <span class="fab fa-linkedin-in"></span>
+                    </a>
+
+
+                    <a href="https://github.com/krissydotnet" class="social-media" id="profile-link" target="_blank">
+                        <span class="fab fa-github-alt"></span>
+                    </a>
+
+
+                    <a href="mailto:krissydotnet@yahoo.com" class="social-media" target="_blank">
+                        <span class="fas fa-at"></span>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+
+</body>
+
+</html>
